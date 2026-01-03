@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile | CampusFind</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./profile.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2>CampusFind</h2>
+        <ul>
+            <li><a href="homepage.html">Dashboard</a></li>
+            <li><a href="lost-items.html">Lost Items</a></li>
+            <li><a href="found-items.html">Found Items</a></li>
+            <li><a href="profile.html" class="active">Profile</a></li>
+            <li><a href="index.html" class="logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- PROFILE SECTION -->
+    <section class="profile-container">
+
+        <div class="profile-card">
+
+            <!-- VIEW MODE -->
+            <div id="viewMode">
+                <div class="avatar-wrapper">
+                    <img src="./assets/no-profile-pic.jpg" alt="User Avatar" class="avatar">
+                </div>
+
+                <h2 id="profileUsername">Loading...</h2>
+                <p class="email" id="profileEmail">Loading...</p>
+
+
+                <div class="info">
+                    <div>
+                        <i class="fa-solid fa-box"></i>
+                        <span>Items Reported</span>
+                        <strong>12</strong>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-check-circle"></i>
+                        <span>Items Returned</span>
+                        <strong>8</strong>
+                    </div>
+                </div>
+
+                <button class="edit-btn" id="editBtn">Edit Profile</button>
+            </div>
+
+            <!-- EDIT MODE -->
+            <div id="editMode" class="hidden">
+                <h3>Edit Profile</h3>
+
+                <input type="text" id="editUsername" placeholder="Username">
+                <input type="email" id="editEmail" placeholder="Email">
+
+                <div class="btn-group">
+                    <button class="save" id="saveBtn">Save</button>
+                    <button class="cancel" id="cancelBtn">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script type="module" src="profile.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.navbar h2 {
+    color: #2c5364;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #2c5364;
+    font-weight: 600;
+}
+
+.navbar a.logout {
+    color: crimson;
+}
+
+/* FORM LAYOUT */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+.form-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.form-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c5364;
+}
+
+.form-box h1 i {
+    color: seagreen;
+}
+
+/* FORM ELEMENTS */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-group textarea {
+    resize: none;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: seagreen;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #2e8b57;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .form-box {
+        padding: 20px;
+    }
+}

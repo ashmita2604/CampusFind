@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusFind | Login</title>
+    
+    <!-- Own CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Register JS -->
+    <script type="module" src="register.js" defer></script>
+
+    <!-- Basic JS -->
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <div class="form-box">
+
+        <!-- SIGN UP -->
+        <form id="signUpForm"method="post" action="">
+            <h2>Sign Up</h2>
+
+            <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
+
+            <div class="input-box">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username" id="username" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Email" id="email" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-lock"></i>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <span class="toggle"
+                    onclick="togglePassword('signup-password', this)">
+                    <i class="fa-solid fa-eye-slash"></i>
+                </span>
+            </div>
+
+            <button id="signUpButton" type="submit">Create Account</button>
+
+            <p>Already have an account?
+                <span onclick="showSignIn()">Sign In</span>
+            </p>
+        </form>
+
+        <!-- SIGN IN -->
+        <form id="signInForm" class="hidden">
+            <h2>Sign In</h2>
+
+            <div id="signInMessage" class="messageDiv" style="display: none;"></div>
+
+            <div class="input-box">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username" id="signin-username" required>
+            </div> 
+
+            <div class="input-box">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Email" id="signin-email" required>
+            </div>
+
+            <div class="input-box">
+                <i class="fa fa-lock"></i>
+                <input type="password" id="signin-password" placeholder="Password" required>
+                <span class="toggle"
+                    onclick="togglePassword('signin-password', this)">
+                    <i class="fa-solid fa-eye-slash"></i>
+                </span>
+            </div>
+
+            <button id="signInButton" type="submit">Login</button>
+
+            <p>Don't have an account?
+                <span onclick="showSignUp()">Sign Up</span>
+            </p>
+        </form>
+
+    </div>
+</div>
+
+
+</body>
+</html>

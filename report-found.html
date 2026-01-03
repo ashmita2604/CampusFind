@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CampusFind | Report Found Item</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="report-found.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2>CampusFind</h2>
+    <ul>
+        <li><a href="homepage.html">Dashboard</a></li>
+        <li><a href="lost-items.html">Lost Items</a></li>
+        <li><a href="found-items.html">Found Items</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="index.html" class="logout">Logout</a></li>
+    </ul>
+</nav>
+
+<!-- FORM CONTAINER -->
+<div class="form-container">
+    <div class="form-box">
+        <h1><i class="fa-solid fa-hand-holding-heart"></i> Report Found Item</h1>
+
+        <form>
+            <div class="input-group">
+                <label>Item Name</label>
+                <input type="text" placeholder="e.g. Wallet, Mobile Phone" required>
+            </div>
+
+            <div class="input-group">
+                <label>Category</label>
+                <select required>
+                    <option value="">Select Category</option>
+                    <option>ID Card</option>
+                    <option>Mobile</option>
+                    <option>Bag</option>
+                    <option>Book</option>
+                    <option>Wallet</option>
+                    <option>Others</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Found Location</label>
+                <input type="text" placeholder="Library, Hostel, Playground" required>
+            </div>
+
+            <div class="input-group">
+                <label>Date Found</label>
+                <input type="date" required>
+            </div>
+
+            <div class="input-group">
+                <label>Description</label>
+                <textarea placeholder="Describe the item..." rows="4"></textarea>
+            </div>
+
+            <div class="input-group">
+                <label>Upload Image (Optional)</label>
+                <input type="file">
+            </div>
+
+            <div class="input-group">
+                <label>Handed Over To</label>
+                <select>
+                    <option>Self</option>
+                    <option>Security Office</option>
+                    <option>Admin Office</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Found Item</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
