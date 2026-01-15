@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #fff;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.navbar h2 {
+    color: #2c5364;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #2c5364;
+    font-weight: 600;
+}
+
+.navbar a.logout {
+    color: crimson;
+}
+
+/* ITEM DETAILS */
+.item-details {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.item-card {
+    background: #fff;
+    width: 800px;
+    max-width: 95%;
+    display: flex;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.item-image {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 120px;
+    color: #2c5364;
+    background: #f4f6f8;
+    border-radius: 12px;
+}
+
+.item-info {
+    flex: 2;
+}
+
+.item-info h2 {
+    margin-bottom: 10px;
+}
+
+.category {
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.details p {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.desc {
+    background: #f1f1f1;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 5px;
+}
+
+/* BUTTONS */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.claim-btn {
+    background: #2c5364;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.claim-btn:hover {
+    background: #203a43;
+}
+
+.back-btn {
+    background: transparent;
+    border: 2px solid #2c5364;
+    color: #2c5364;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background: #2c5364;
+    color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .item-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .item-image {
+        font-size: 90px;
+    }
+}

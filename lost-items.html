@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>CampusFind | Lost Items</title>
@@ -8,78 +9,49 @@
     <link rel="stylesheet" href="lost-items.css">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <h2>CampusFind</h2>
-    <ul>
-        <li><a href="homepage.html">Dashboard</a></li>
-        <li><a href="lost-items.html" class="active">Lost Items</a></li>
-        <li><a href="found-items.html">Found Items</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="index.html" class="logout">Logout</a></li>
-    </ul>
-</nav>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2>CampusFind</h2>
+        <ul>
+            <li><a href="homepage.html">Dashboard</a></li>
+            <li><a href="lost-items.html" class="active">Lost Items</a></li>
+            <li><a href="found-items.html">Found Items</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="index.html" class="logout">Logout</a></li>
+        </ul>
+    </nav>
 
-<!-- PAGE TITLE -->
-<section class="page-title">
-    <h1><i class="fa-solid fa-circle-xmark"></i> Lost Items</h1>
-    <p>Browse items reported as lost on campus</p>
-</section>
+    <!-- PAGE TITLE -->
+    <section class="page-title">
+        <h1><i class="fa-solid fa-circle-xmark"></i> Lost Items</h1>
+        <p>Browse items reported as lost on campus</p>
+    </section>
 
-<!-- SEARCH & FILTER -->
-<div class="search-filter">
-    <input type="text" placeholder="Search item...">
-    <select>
-        <option>All Categories</option>
-        <option>ID Card</option>
-        <option>Mobile</option>
-        <option>Bag</option>
-        <option>Book</option>
-        <option>Others</option>
-    </select>
-</div>
-
-<!-- LOST ITEMS GRID -->
-<section class="items-container">
-
-    <div class="item-card">
-        <i class="fa-solid fa-id-card"></i>
-        <h3>ID Card</h3>
-        <p><strong>Location:</strong> Library Block</p>
-        <p><strong>Date:</strong> 12 Sep 2025</p>
-        <button onclick="location.href='item-details.html'">Claim</button>
+    <!-- SEARCH & FILTER -->
+    <div class="search-filter">
+        <input type="text" placeholder="Search item...">
+        <select>
+            <option>All Categories</option>
+            <option>ID Card</option>
+            <option>Mobile</option>
+            <option>Bag</option>
+            <option>Book</option>
+            <option>Others</option>
+        </select>
     </div>
 
-    <div class="item-card">
-        <i class="fa-solid fa-mobile-screen"></i>
-        <h3>Mobile Phone</h3>
-        <p><strong>Location:</strong> Hostel Area</p>
-        <p><strong>Date:</strong> 15 Sep 2025</p>
-        <button onclick="location.href='item-details.html'">Claim</button>
-    </div>
+    <!-- LOST ITEMS GRID -->
+    <section class="items-container" id="lostItemsList">
 
-    <div class="item-card">
-        <i class="fa-solid fa-book"></i>
-        <h3>Notebook</h3>
-        <p><strong>Location:</strong> Classroom</p>
-        <p><strong>Date:</strong> 20 Sep 2025</p>
-        <button onclick="location.href='item-details.html'">Claim</button>
-    </div>
+    </section>
 
-    <div class="item-card">
-        <i class="fa-solid fa-bottle-water"></i>
-        <h3>Water Bottle</h3>
-        <p><strong>Location:</strong> Canteen</p>
-        <p><strong>Date:</strong> 18 Sep 2025</p>
-        <button onclick="location.href='item-details.html'">Claim</button>
-    </div>
-
-</section>
-
+    <!-- Own JS -->
+    <script type="module" src="lost-items.js"></script>
 </body>
+
 </html>

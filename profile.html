@@ -30,6 +30,7 @@
     <!-- PROFILE SECTION -->
     <section class="profile-container">
 
+        <!-- Profile Card -->
         <div class="profile-card">
 
             <!-- VIEW MODE -->
@@ -73,8 +74,24 @@
 
         </div>
 
+        <!-- CLAIM REQUESTS SECTION -->
+        <div class="claims-container">
+            <h3>Claim Requests</h3>
+
+            <div id="claimsList">
+                <p class="empty-text">No pending claims 💤</p>
+            </div>
+        </div>
+
     </section>
 
+    <!-- Email JS connection -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init("bNyAx5O2WeSmATpsr");
+    </script>
+
+    <!-- Own JS -->
     <script type="module" src="profile.js"></script>
 </body>
 
