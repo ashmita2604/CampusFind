@@ -40,7 +40,7 @@ async function loadLostItems() {
         <p><strong>Date:</strong> ${item.dateLost}</p>
 
         <button onclick="location.href='lost_items-details.html?id=${doc.id}'">
-          Contact Owner
+          View Details
         </button>
       `;
 

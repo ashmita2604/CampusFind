@@ -9,8 +9,6 @@ import {
   where,
   getDocs
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
-emailjs.init("bNyAx5O2WeSmATpsr");
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyASrrsa3QYTRiu8zWfTA83_c5Kj0aISXa0",
@@ -124,35 +122,36 @@ async function loadClaimRequests() {
 
     // APPROVE
     div.querySelector(".approve").onclick = async () => {
-  // update claim status
-  await updateDoc(doc(db, "claims", docSnap.id), {
-    status: "approved"
-  });
+      // update claim status
+      await updateDoc(doc(db, "claims", docSnap.id), {
+        status: "approved"
+      });
 
-  // mark item as returned
-  await updateDoc(doc(db, "foundItems", claim.itemId), {
-    status: "returned"
-  });
+      // mark item as returned
+      await updateDoc(doc(db, "foundItems", claim.itemId), {
+        status: "returned"
+      });
 
-  // SEND EMAIL TO CLAIMER 
-  emailjs.send(
-    "service_sx06fwy",      
-    "template_f829h5q",      
-    {
-      to_email: claimerEmail,
-      owner_email: profileEmail.innerText,
-      item_name: itemName
-    }
-  )
-  .then(() => {
-    alert("Approval email sent to claimer 📬✨");
-  })
-  .catch(err => {
-    console.error("Email failed ❌", err);
-  });
+      // SEND EMAIL TO CLAIMER
+      emailjs.send(
+        "service_sx06fwy",
+        "template_f829h5q",
+        {
+          to_email: claimerEmail,
+          owner_email: profileEmail.innerText,
+          item_name: itemName
+        }
+      )
+        .then(() => {
+          alert("Approval email sent to claimer 📬✨");
+        })
+        .catch(err => {
+          console.error("Email failed ❌", err);
+          alert("Email sending failed 😭");
+        });
 
-  loadClaimRequests();
-};
+      loadClaimRequests();
+    };
 
 
     // REJECT

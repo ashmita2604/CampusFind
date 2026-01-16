@@ -85,12 +85,13 @@
 
     </section>
 
-    <!-- Email JS connection -->
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        emailjs.init("bNyAx5O2WeSmATpsr");
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
+    <script>
+        (function () {
+            emailjs.init("bNyAx5O2WeSmATpsr");
+        })();
+    </script>
     <!-- Own JS -->
     <script type="module" src="profile.js"></script>
 </body>

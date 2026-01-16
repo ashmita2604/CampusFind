@@ -39,7 +39,7 @@ if (!itemSnap.exists()) {
 
 const item = itemSnap.data();
 
-/* 🔹 DISPLAY ITEM DATA */
+/*  DISPLAY ITEM DATA */
 document.getElementById("itemName").textContent = item.itemName;
 document.getElementById("itemCategory").textContent = item.category;
 document.getElementById("itemLocation").textContent = item.location;
@@ -51,7 +51,7 @@ document.getElementById("itemImage").innerHTML =
     ? `<img src="${item.imageLink}" style="max-width:100%;border-radius:12px;">`
     : `<i class="fa-solid fa-box"></i>`;
 
-/* 🔹 CLAIM LOGIC */
+/*  CLAIM LOGIC */
 const claimBtn = document.getElementById("claimBtn");
 
 claimBtn.onclick = async () => {
@@ -70,7 +70,7 @@ claimBtn.onclick = async () => {
     }
 
     const item = itemSnap.data();
-    const ownerId = item.finderId; // ✅ FIX
+    const ownerId = item.finderId;
 
     if (!ownerId) {
       alert("Owner information missing ❌");
@@ -82,7 +82,7 @@ claimBtn.onclick = async () => {
       return;
     }
 
-    // 1️⃣ Create claim request
+    //  Create claim request
     await addDoc(collection(db, "claims"), {
       itemId,
       itemType: "found",
@@ -92,7 +92,7 @@ claimBtn.onclick = async () => {
       createdAt: serverTimestamp()
     });
 
-    // 2️⃣ Update found item status
+    //  Update found item status
     await updateDoc(itemRef, {
       status: "claimed"
     });
