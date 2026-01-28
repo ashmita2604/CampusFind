@@ -50,6 +50,40 @@ async function loadProfile() {
 
 loadProfile();
 
+async function loadStats() {
+  if (!userId) return;
+
+  // LOST items reported
+  const lostQuery = query(
+    collection(db, "lostItems"),
+    where("userId", "==", userId)
+  );
+
+  // FOUND items reported
+  const foundQuery = query(
+    collection(db, "foundItems"),
+    where("userId", "==", userId)
+  );
+
+  // RETURNED items
+  const returnedQuery = query(
+    collection(db, "foundItems"),
+    where("userId", "==", userId),
+    where("status", "==", "returned")
+  );
+
+  const lostSnap = await getDocs(lostQuery);
+  const foundSnap = await getDocs(foundQuery);
+  const returnedSnap = await getDocs(returnedQuery);
+
+  document.getElementById("itemsReportedCount").innerText =
+    lostSnap.size + foundSnap.size;
+
+  document.getElementById("itemsReturnedCount").innerText =
+    returnedSnap.size;
+}
+
+
 // EDIT
 document.getElementById("editBtn").onclick = () => {
   viewMode.classList.add("hidden");
@@ -172,3 +206,5 @@ async function loadClaimRequests() {
 }
 
 loadClaimRequests();
+
+loadStats();
