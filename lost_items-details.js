@@ -1,5 +1,5 @@
 import { initializeApp } from
-"https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+  "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
 
 import {
   getFirestore,
@@ -34,7 +34,19 @@ async function loadItemDetails() {
       return;
     }
 
+    //FETCH ITEM
     const item = docSnap.data();
+
+    // FETCH OWNER EMAIL
+    const ownerSnap = await getDoc(doc(db, "users", item.userId));
+
+    if (!ownerSnap.exists()) {
+      alert("Owner details not found 😢");
+      return;
+    }
+
+    const ownerEmail = ownerSnap.data().email;
+
 
     document.getElementById("itemName").textContent = item.itemName;
     document.getElementById("itemCategory").textContent = item.category;
@@ -47,8 +59,31 @@ async function loadItemDetails() {
         ? `<img src="${item.imageLink}" style="max-width:100%;border-radius:12px;">`
         : `<i class="fa-solid fa-circle-xmark"></i>`;
 
-    document.getElementById("claimBtn").onclick = () => {
-      alert("Next: Chat / Email connection 💬📧");
+    document.getElementById("claimBtn").onclick = async () => {
+      const finderEmail = localStorage.getItem("loggedInUserEmail");
+
+      if (!finderEmail) {
+        alert("Please login to contact the owner 🔐");
+        return;
+      }
+
+      emailjs.send(
+        "service_sx06fwy",
+        "template_0u70pyl",
+        {
+          to_email: ownerEmail,
+          item_name: item.itemName,
+          finder_email: finderEmail,
+          last_seen_location: item.location
+        }
+      )
+        .then(() => {
+          alert("Email sent to owner 📧✨ They will contact you soon!");
+        })
+        .catch(err => {
+          console.error("Email error ❌", err);
+          alert("Failed to send email 😢");
+        });
     };
 
   } catch (error) {

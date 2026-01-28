@@ -98,7 +98,11 @@ signInButton.addEventListener("click", function (event) {
       // Signed in 
       const user = userCredential.user;
       showMessage('Logged In Successfully', 'signInMessage');
+
       localStorage.setItem('loggedInUserId', user.uid);
+      localStorage.setItem('loggedInUserEmail', user.email);
+
+
       window.location.href = 'homepage.html';
     })
     .catch((error) => {
