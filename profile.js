@@ -65,11 +65,11 @@ async function loadStats() {
     where("userId", "==", userId)
   );
 
-  // RETURNED items
+  // ITEMS RETURNED (approved claims)
   const returnedQuery = query(
-    collection(db, "foundItems"),
-    where("userId", "==", userId),
-    where("status", "==", "returned")
+    collection(db, "claims"),
+    where("ownerId", "==", userId),
+    where("status", "==", "approved")
   );
 
   const lostSnap = await getDocs(lostQuery);
